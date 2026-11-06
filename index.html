@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los Premios de la Abuela · Premios artesanales para perros y gatos</title>
+<meta name="description" content="Galletas, sticks y crema de cacahuate para perros y gatos, hechos a mano con ingredientes reales, sin conservadores y sin azúcares. Pedidos por WhatsApp en CDMX.">
+<meta property="og:title" content="Los Premios de la Abuela">
+<meta property="og:description" content="Premios que saben a hogar. Hechos con ♥, como lo haría la Abuela.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Great+Vibes&family=Open+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Paleta del manual de identidad */
+    --cafe:#5a382b;      /* Café Valkiria – principal */
+    --avena:#fff8ee;     /* Avena */
+    --mani:#E8CDA9;      /* Maní */
+    --manzana:#C97F6F;   /* Manzana */
+    --oliva:#899078;     /* Oliva – acento */
+    --max:#d8a354;       /* Amarillo Max – acento */
+    --olotillo:#0e0e0f;  /* Monocromático */
+    --blanco:#ffffff;
+
+    /* Tipografías: The Seasons y Buffalo se usan si están instaladas/alojadas;
+       si no, entran sustitutos de Google Fonts con el mismo carácter. */
+    --f-titulo:"The Seasons","Playfair Display",Georgia,serif;
+    --f-texto:"Open Sans",system-ui,sans-serif;
+    --f-mano:"Buffalo","Caveat",cursive;
+    --f-firma:"Great Vibes",cursive;
+
+    --radio:18px;
+    --sombra:0 10px 30px rgba(90,56,43,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--f-texto);color:var(--cafe);background:var(--avena);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+  .mano{font-family:var(--f-mano);font-weight:700}
+  h1,h2,h3{font-family:var(--f-titulo);font-weight:700;line-height:1.1}
+  h2{font-size:clamp(2rem,4vw,2.8rem)}
+  h2 em{font-style:italic;font-weight:500}
+  .eyebrow{font-family:var(--f-mano);font-size:1.5rem;color:var(--manzana);display:block;margin-bottom:.2rem}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,248,238,.92);backdrop-filter:blur(8px);border-bottom:2px dashed rgba(90,56,43,.18)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+  .marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .marca img{height:52px;width:auto}
+  .wordmark{display:flex;flex-direction:column;line-height:.9}
+  .wordmark .lp{font-family:var(--f-titulo);font-size:1.25rem}
+  .wordmark .ab{font-family:var(--f-firma);font-size:1.9rem;margin-top:-4px;margin-left:28px}
+  .wordmark small{font-family:var(--f-titulo);font-size:.85rem;margin-top:-1.55rem}
+  .menu{display:flex;gap:22px;list-style:none;font-weight:600;font-size:.95rem}
+  .menu a{text-decoration:none}
+  .menu a:hover{color:var(--manzana)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-family:var(--f-texto);font-size:1rem;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px);box-shadow:var(--sombra)}
+  .btn-max{background:var(--max);color:var(--cafe)}
+  .btn-cafe{background:var(--cafe);color:var(--avena)}
+  .btn-line{background:transparent;color:var(--cafe);border:2px solid var(--cafe)}
+  .btn svg{width:20px;height:20px}
+  @media (max-width:820px){.menu{display:none}.nav .btn{padding:10px 16px;font-size:.9rem}}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 48px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(2.8rem,6.5vw,4.6rem)}
+  .hero h1 .firma{font-family:var(--f-firma);font-weight:400;font-size:1.25em;display:inline-block;transform:translateY(.08em)}
+  .hero p.lead{font-size:1.15rem;max-width:520px;margin:18px 0 28px}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-arte{position:relative;aspect-ratio:1/1;background:var(--mani);border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 10px var(--avena),inset 0 0 0 12px rgba(90,56,43,.25)}
+  .hero-arte .logo-grande{width:78%}
+  .sello{position:absolute;width:130px;height:130px;border-radius:50%;background:var(--avena);border:2px dashed var(--cafe);display:grid;place-items:center;text-align:center;font-family:var(--f-mano);font-size:1.5rem;line-height:1;transform:rotate(-10deg);box-shadow:var(--sombra)}
+  .sello span{display:block;font-size:1.6rem;color:var(--manzana)}
+  .hero-arte .sello{right:-6px;top:6%}
+  .huellitas{position:absolute;left:-10px;bottom:-6px;width:220px;opacity:.9}
+  @media (max-width:820px){
+    .hero{padding-top:36px}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-arte{max-width:360px;margin-inline:auto;width:100%}
+    .sello{width:104px;height:104px;font-size:1.2rem}
+  }
+
+  /* ---------- Beneficios ---------- */
+  .beneficios{background:var(--blanco);border-block:2px dashed rgba(90,56,43,.15)}
+  .beneficios ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:26px 0}
+  .beneficios li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;font-family:var(--f-mano);font-size:1.35rem;line-height:1.1}
+  .beneficios .ico{width:58px;height:58px;border-radius:50%;border:2px dashed var(--cafe);display:grid;place-items:center}
+  .beneficios .ico svg{width:28px;height:28px}
+  @media (max-width:820px){.beneficios ul{grid-template-columns:repeat(2,1fr);row-gap:22px}.beneficios li:last-child{grid-column:1/-1}}
+
+  /* ---------- Productos ---------- */
+  section{padding:80px 0}
+  .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+  .head p{max-width:420px}
+  .productos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+  .card{background:var(--blanco);border-radius:var(--radio);box-shadow:var(--sombra);overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .card .arte{height:170px;display:grid;place-items:center;position:relative}
+  .card .arte svg{width:110px;height:110px}
+  .card .arte img{max-height:118px;width:auto;filter:drop-shadow(0 6px 8px rgba(90,56,43,.18))}
+  .card .tag{position:absolute;top:12px;left:12px;background:var(--avena);border:1.5px dashed var(--cafe);border-radius:8px;padding:2px 10px;font-family:var(--f-mano);font-size:1.1rem}
+  .card .cuerpo{padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .card h3{font-size:1.4rem}
+  .card .desc{font-size:.93rem;opacity:.85;flex:1}
+  .tamanos{display:flex;gap:8px}
+  .tamanos button{flex:1;padding:8px 0;border-radius:10px;border:2px solid var(--mani);background:var(--avena);color:var(--cafe);font-weight:700;font-family:var(--f-texto);cursor:pointer;font-size:.95rem}
+  .tamanos button[aria-pressed="true"]{background:var(--cafe);border-color:var(--cafe);color:var(--avena)}
+  .precio-fila{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-top:4px}
+  .precio{font-family:var(--f-mano);font-size:2.2rem;line-height:1}
+  .precio small{font-family:var(--f-texto);font-size:.8rem;opacity:.7;margin-left:2px}
+  .card .btn{padding:10px 16px;font-size:.95rem;justify-content:center}
+  .bg-mani{background:var(--mani)}
+  .bg-manzana{background:var(--manzana)}
+  .bg-oliva{background:var(--oliva)}
+  .bg-max{background:var(--max)}
+
+  /* Tabla de precios */
+  .tabla-precios{margin-top:46px;background:var(--blanco);border-radius:var(--radio);padding:26px;border:2px dashed rgba(90,56,43,.25)}
+  .tabla-precios h3{font-size:1.5rem;margin-bottom:14px}
+  table{width:100%;border-collapse:collapse;font-size:.98rem}
+  th,td{padding:10px 8px;text-align:left;border-bottom:1px solid rgba(90,56,43,.12)}
+  th{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.04em;opacity:.75}
+  td.num,th.num{text-align:right;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+
+  /* ---------- Historia ---------- */
+  .historia{background:var(--cafe);color:var(--avena);position:relative;overflow:hidden}
+  .historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .historia .eyebrow{color:var(--max)}
+  .historia p{margin-top:16px;font-size:1.05rem;opacity:.95}
+  .historia .firma{font-family:var(--f-firma);font-size:2.4rem;color:var(--max);margin-top:18px;display:block}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .mascota{background:var(--avena);color:var(--cafe);border-radius:var(--radio);padding:22px;text-align:center}
+  .mascota img{height:110px;width:auto;max-width:100%;object-fit:contain;margin:0 auto 12px}
+  .mascota h3{font-size:1.6rem}
+  .mascota p{margin-top:6px;font-size:.92rem;opacity:.85;color:var(--cafe)}
+  @media (max-width:820px){.historia-grid{grid-template-columns:1fr}}
+
+  /* ---------- Ingredientes ---------- */
+  .ingredientes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+  .ing{background:var(--blanco);border-radius:var(--radio);padding:18px 12px;text-align:center;box-shadow:var(--sombra)}
+  .ing img,.ing .ing-svg{height:72px;width:auto;margin:0 auto 10px;display:block}
+  .ing b{font-family:var(--f-titulo);font-size:1.1rem;display:block}
+  .ing span{font-size:.85rem;opacity:.75}
+
+  /* ---------- Consejos ---------- */
+  .tips{background:var(--blanco)}
+  .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tip{border:2px dashed var(--mani);border-radius:var(--radio);padding:22px;position:relative}
+  .tip .num{font-family:var(--f-mano);font-size:2.6rem;color:var(--manzana);line-height:1}
+  .tip h3{font-size:1.2rem;margin:6px 0 6px}
+  .tip p{font-size:.95rem;opacity:.9}
+  @media (max-width:820px){.tips-grid{grid-template-columns:1fr}}
+
+  /* ---------- Pedidos ---------- */
+  .pedidos{text-align:center}
+  .pedidos .caja{background:var(--max);border-radius:28px;padding:56px 24px;position:relative;overflow:hidden}
+  .pedidos h2{max-width:640px;margin:0 auto}
+  .pedidos p{max-width:520px;margin:14px auto 26px;font-size:1.08rem}
+  .pedidos .pata{position:absolute;bottom:-34px;height:150px;width:auto;pointer-events:none}
+  .pedidos .pata-v{left:4%;transform:rotate(-8deg)}
+  .pedidos .pata-m{right:4%;transform:rotate(8deg)}
+  @media (max-width:820px){.pedidos .pata{height:96px;bottom:-26px}.pedidos .caja{padding-bottom:84px}}
+  .pedidos .tel{font-family:var(--f-mano);font-size:clamp(1.5rem,5vw,2rem);display:block;margin-top:16px;white-space:nowrap}
+
+  /* ---------- Footer ---------- */
+  footer{padding:36px 0 46px;text-align:center;font-size:.9rem}
+  footer .firma{font-family:var(--f-firma);font-size:2rem;display:block;margin-bottom:6px}
+  .huella-sep{display:block;margin:0 auto 18px;width:240px;opacity:.7}
+
+  /* Botón flotante WhatsApp */
+  .wa-flotante{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .wa-flotante svg{width:30px;height:30px;fill:#fff}
+
+  :focus-visible{outline:3px solid var(--max);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- Íconos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-huella" viewBox="0 0 64 64"><g fill="currentColor"><ellipse cx="32" cy="42" rx="14" ry="12"/><ellipse cx="14" cy="26" rx="6" ry="8"/><ellipse cx="26" cy="15" rx="6" ry="8"/><ellipse cx="38" cy="15" rx="6" ry="8"/><ellipse cx="50" cy="26" rx="6" ry="8"/></g></symbol>
+    <symbol id="i-wa" viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8a3.3 3.3 0 0 0 2.1-1.5 2.7 2.7 0 0 0 .2-1.5c0-.2-.3-.3-.7-.5z"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="marca" href="#inicio" aria-label="Los Premios de la Abuela, inicio">
+      <!-- Coloca aquí el archivo del logo horizontal/etiqueta como logo.png -->
+      <img src="logo.png" alt="Los Premios de la Abuela" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="wordmark" style="display:none"><span class="lp">Los Premios</span><span class="ab">Abuela</span><small>de la</small></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#premios">Nuestros premios</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#historia">Nuestra historia</a></li>
+      <li><a href="#ingredientes">Ingredientes</a></li>
+    </ul>
+    <a class="btn btn-max js-wa" data-msg="¡Hola! Me gustaría hacer un pedido 🐾" href="#"><svg><use href="#i-wa"/></svg>Pedir</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Hecho como lo haría la Abuela</span>
+        <h1>Premios que saben a <span class="firma">hogar</span></h1>
+        <p class="lead">Galletas, sticks y crema de cacahuate para perros y gatos, hechos a mano con ingredientes reales, sin conservadores y sin azúcares añadidos.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-cafe" href="#premios">Ver premios →</a>
+          <a class="btn btn-line js-wa" data-msg="¡Hola! Quiero conocer los premios de la Abuela 🐶🐱" href="#"><svg><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-arte">
+        <!-- Logo principal: guárdalo como logo-principal.png -->
+        <img class="logo-grande" src="logo-principal.png" alt="Logotipo de Los Premios de la Abuela" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-grande',innerHTML:'<svg viewBox=&quot;0 0 64 64&quot; style=&quot;width:60%;margin:auto;display:block;color:#5a382b&quot;><use href=&quot;#i-huella&quot;/></svg>'}))">
+        <div class="sello">Hecho con<span>♥</span></div>
+      </div>
+    </div>
+    <svg class="huellitas" viewBox="0 0 220 60" aria-hidden="true">
+      <path d="M5 50 C 60 20, 120 60, 215 15" fill="none" stroke="#5a382b" stroke-width="2" stroke-dasharray="6 7" opacity=".5"/>
+      <use href="#i-huella" x="40" y="22" width="18" height="18" style="color:#5a382b"/>
+      <use href="#i-huella" x="110" y="28" width="18" height="18" style="color:#C97F6F"/>
+      <use href="#i-huella" x="180" y="8" width="18" height="18" style="color:#d8a354"/>
+    </svg>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <div class="beneficios">
+    <ul class="wrap">
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14z"/><path d="M5 19 13 11"/></svg></span>Ingredientes reales</li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M4 4l16 16"/></svg></span>Sin conservadores</li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>Libre de azúcares</li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20c2-5 4-7 8-7s6 2 8 7"/><circle cx="12" cy="7" r="3"/><path d="M8 3l1 2M16 3l-1 2"/></svg></span>Artesanal</li>
+      <li><span class="ico"><svg viewBox="0 0 64 64"><use href="#i-huella"/></svg></span>Solo para mascotas</li>
+    </ul>
+  </div>
+
+  <!-- PRODUCTOS -->
+  <section id="premios">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Recetas de la Abuela</span>
+          <h2>Nuestros <em>premios</em></h2>
+        </div>
+        <p>Cada lote se hornea en pequeñas cantidades para que llegue fresco a casa. Elige el tamaño y pídelo directo por WhatsApp.</p>
+      </div>
+
+      <div class="productos-grid" id="productos"></div>
+
+      <div class="tabla-precios" id="precios">
+        <h3>Lista de precios</h3>
+        <table>
+          <thead><tr><th>Producto</th><th class="num">Presentación</th><th class="num">Precio</th></tr></thead>
+          <tbody id="tabla"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="historia" id="historia">
+    <div class="wrap historia-grid">
+      <div>
+        <span class="eyebrow">Nuestra historia</span>
+        <h2>Todo empezó con Valkiria, Max y una Abuela que los consiente</h2>
+        <p>Los Premios de la Abuela nace de una forma muy sencilla de demostrar amor: preparar algo especial para los animalitos que forman parte de la familia.</p>
+        <p>La Abuela Bibiana siempre ha tenido algo rico para sus nietos peludos. Hoy esas mismas recetas, con ingredientes seleccionados y hechas a mano, llegan a tu casa.</p>
+        <span class="firma">con cariño, la Abuela</span>
+      </div>
+      <div class="duo">
+        <div class="mascota">
+          <img src="img/valkiria-patitas.webp" alt="Patitas de Valkiria" width="301" height="178" loading="lazy">
+          <h3>Valkiria</h3>
+          <p>Perrita alegre de grandes orejas. Inspiró el color principal de la marca: el Café Valkiria.</p>
+        </div>
+        <div class="mascota">
+          <img src="img/max-patitas.webp" alt="Patitas de Max" width="346" height="191" loading="lazy">
+          <h3>Max</h3>
+          <p>Gatito amarillo, tierno y travieso. De su pelaje dorado viene el Amarillo Max.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTES -->
+  <section id="ingredientes">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Lo que sí lleva</span>
+          <h2>Ingredientes <em>reales</em></h2>
+        </div>
+        <p>Nada de saborizantes artificiales ni rellenos. Si la Abuela no lo pondría en su cocina, no va en nuestros premios.</p>
+      </div>
+      <div class="ingredientes-grid">
+        <div class="ing"><img src="img/ing-higado.webp" alt="" loading="lazy"><b>Hígado de res</b><span>Hierro y vitaminas A y B</span></div>
+        <div class="ing"><img src="img/ing-pollo.webp" alt="" loading="lazy"><b>Pollo</b><span>Sabor que enamora</span></div>
+        <div class="ing"><img src="img/ing-calabaza.webp" alt="" loading="lazy"><b>Calabaza de Castilla</b><span>Fibra para su pancita</span></div>
+        <div class="ing"><img src="img/ing-corazon.webp" alt="" loading="lazy"><b>Corazón de res</b><span>Proteína natural</span></div>
+        <div class="ing"><svg class="ing-svg" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#5a382b" stroke-width="5" stroke-linejoin="round" fill="#e2b06a"><path d="M38 12c14-6 28 6 22 22-3 8 2 12 6 20 8 16-4 34-22 32S20 70 28 52c4-8 2-12-2-20-5-10 0-17 12-20z"/></g><g stroke="#b3833f" stroke-width="3" stroke-linecap="round" fill="none"><path d="M36 26l6 3M48 22l2 5M34 64l6 2M48 72l2-5M56 58l-5 2"/></g></svg><b>Cacahuate</b><span>Grasas buenas</span></div>
+        <div class="ing"><img src="img/ing-avena.webp" alt="" loading="lazy"><b>Avena</b><span>Energía de la buena</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSEJOS -->
+  <section class="tips">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Consejos de la Abuela</span>
+          <h2>Para consentir <em>con medida</em></h2>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip"><span class="num">1</span><h3>Premios, no comida</h3><p>Los premios deben ser una pequeña parte de lo que come al día. Su alimento sigue siendo lo principal.</p></div>
+        <div class="tip"><span class="num">2</span><h3>Guárdalos bien</h3><p>Al no llevar conservadores, consérvalos en un recipiente cerrado, en lugar fresco y seco. Los sticks y la crema, mejor en refri.</p></div>
+        <div class="tip"><span class="num">3</span><h3>Ojo con el xilitol</h3><p>Nunca le des crema de cacahuate comercial con xilitol: es tóxico para perros. La nuestra no lleva azúcares ni endulzantes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDOS -->
+  <section class="pedidos" id="pedidos">
+    <div class="wrap">
+      <div class="caja">
+        <span class="eyebrow" style="color:var(--cafe)">¿Listo para consentirlo?</span>
+        <h2>Haz tu pedido y la Abuela se pone a hornear</h2>
+        <p>Escríbenos por WhatsApp con lo que quieres y te confirmamos disponibilidad y entrega.</p>
+        <a class="btn btn-cafe js-wa" data-msg="¡Hola! Me gustaría hacer un pedido 🐾" href="#"><svg><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
+        <span class="tel">Pedidos al 55-6853-6090</span>
+        <img class="pata pata-v" src="img/pata-valkiria.webp" alt="">
+        <img class="pata pata-m" src="img/pata-max.webp" alt="">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="huella-sep" viewBox="0 0 240 30" aria-hidden="true">
+    <path d="M0 15 H240" stroke="#5a382b" stroke-width="2" stroke-dasharray="5 7" opacity=".4"/>
+    <use href="#i-huella" x="70" y="4" width="20" height="20" style="color:#C97F6F"/>
+    <use href="#i-huella" x="110" y="4" width="20" height="20" style="color:#5a382b"/>
+    <use href="#i-huella" x="150" y="4" width="20" height="20" style="color:#d8a354"/>
+  </svg>
+  <span class="firma">Hecho con ♥, como lo haría la Abuela.</span>
+  <p>© <span id="anio"></span> Los Premios de la Abuela · Premios artesanales para perros y gatos</p>
+</footer>
+
+<a class="wa-flotante js-wa" data-msg="¡Hola! Me gustaría hacer un pedido 🐾" href="#" aria-label="Pedir por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+  // ====== Configuración: edita aquí teléfono, productos y precios ======
+  const WHATSAPP = "525568536090"; // 52 + número a 10 dígitos
+
+  const PRODUCTOS = [
+    { nombre:"Galletas de hígado de res", tag:"Favoritas", fondo:"bg-manzana", icono:"galleta",
+      desc:"Crujientes y con todo el sabor del hígado de res. El premio clásico de la Abuela.",
+      tamanos:[{g:"100 g",p:45},{g:"50 g",p:25}] },
+    { nombre:"Galletas de hígado de pollo", tag:"Suavecitas", fondo:"bg-mani", icono:"hueso",
+      desc:"Un sabor suave que conquista hasta a los más quisquillosos, perros y gatos.",
+      tamanos:[{g:"100 g",p:45},{g:"50 g",p:25}] },
+    { nombre:"Galletas de calabaza de Castilla", tag:"Ligeras", fondo:"bg-max", icono:"calabaza",
+      desc:"Con calabaza de Castilla, rica en fibra. Ideales para premiar seguido.",
+      tamanos:[{g:"100 g",p:40},{g:"50 g",p:20}] },
+    { nombre:"Sticks de corazón de res", tag:"Deshidratados", fondo:"bg-oliva", icono:"stick",
+      desc:"Tiras de corazón de res deshidratado, 100% proteína y nada más.",
+      tamanos:[{g:"100 g",p:150},{g:"50 g",p:75}] },
+    { nombre:"Crema de cacahuate", tag:"Sin azúcares", fondo:"bg-mani", icono:"frasco",
+      desc:"Solo cacahuate, sin xilitol ni conservadores. Perfecta para juguetes rellenables.",
+      tamanos:[{g:"220 g",p:100}] }
+  ];
+  // ====================================================================
+
+  const ICONOS = {
+    galleta:'<img src="img/galleta-corazon.webp" alt="" loading="lazy">',
+    hueso:'<img src="img/hueso.webp" alt="" loading="lazy">',
+    calabaza:'<img src="img/ing-calabaza.webp" alt="" loading="lazy">',
+    stick:'<img src="img/ing-corazon.webp" alt="" loading="lazy">',
+    frasco:'<svg viewBox="0 0 100 100"><g stroke="#5a382b" stroke-width="4" stroke-linejoin="round"><rect x="28" y="14" width="44" height="14" rx="4" fill="#d8a354"/><path d="M26 30h48v50a8 8 0 0 1-8 8H34a8 8 0 0 1-8-8z" fill="#E8CDA9"/><rect x="34" y="46" width="32" height="22" rx="4" fill="#fff8ee"/></g><path d="M50 62s-7-4-7-9a3.5 3.5 0 0 1 7-1 3.5 3.5 0 0 1 7 1c0 5-7 9-7 9z" fill="#C97F6F"/></svg>'
+  };
+
+  const waLink = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+  const mxn = n => "$" + n.toLocaleString("es-MX");
+
+  // Tarjetas
+  const grid = document.getElementById("productos");
+  PRODUCTOS.forEach(prod => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="arte ${prod.fondo}">${ICONOS[prod.icono]}<span class="tag">${prod.tag}</span></div>
+      <div class="cuerpo">
+        <h3>${prod.nombre}</h3>
+        <p class="desc">${prod.desc}</p>
+        <div class="tamanos" role="group" aria-label="Presentación">
+          ${prod.tamanos.map((t,i)=>`<button type="button" aria-pressed="${i===0}" data-i="${i}">${t.g}</button>`).join("")}
+        </div>
+        <div class="precio-fila">
+          <span class="precio"></span>
+          <a class="btn btn-max" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir</a>
+        </div>
+      </div>`;
+    const precio = card.querySelector(".precio");
+    const pedir = card.querySelector(".btn");
+    const botones = card.querySelectorAll(".tamanos button");
+    const elegir = i => {
+      const t = prod.tamanos[i];
+      precio.innerHTML = `${mxn(t.p)}<small>MXN</small>`;
+      pedir.href = waLink(`¡Hola! Quiero pedir ${prod.nombre} de ${t.g} (${mxn(t.p)}) 🐾`);
+      botones.forEach(b => b.setAttribute("aria-pressed", b.dataset.i == i));
+    };
+    botones.forEach(b => b.addEventListener("click", () => elegir(+b.dataset.i)));
+    elegir(0);
+    grid.appendChild(card);
+  });
+
+  // Tabla de precios
+  document.getElementById("tabla").innerHTML = PRODUCTOS.flatMap(prod =>
+    prod.tamanos.map((t,i) => `<tr><td>${i===0 ? "<b>"+prod.nombre+"</b>" : ""}</td><td class="num">${t.g}</td><td class="num">${mxn(t.p)}</td></tr>`)
+  ).join("");
+
+  // Enlaces generales de WhatsApp
+  document.querySelectorAll(".js-wa").forEach(a => {
+    a.href = waLink(a.dataset.msg);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  document.getElementById("anio").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
