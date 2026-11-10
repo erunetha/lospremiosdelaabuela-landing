@@ -107,6 +107,7 @@
   .card .cuerpo{padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
   .card h3{font-size:1.4rem}
   .card .desc{font-size:.93rem;opacity:.85;flex:1}
+  .temporada{font-family:var(--f-mano);font-size:1.1rem;color:var(--manzana)}
   .tamanos{display:flex;gap:8px}
   .tamanos button{flex:1;padding:8px 0;border-radius:10px;border:2px solid var(--mani);background:var(--avena);color:var(--cafe);font-weight:700;font-family:var(--f-texto);cursor:pointer;font-size:.95rem}
   .tamanos button[aria-pressed="true"]{background:var(--cafe);border-color:var(--cafe);color:var(--avena)}
@@ -144,7 +145,7 @@
   /* ---------- Ingredientes ---------- */
   .ingredientes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
   .ing{background:var(--blanco);border-radius:var(--radio);padding:18px 12px;text-align:center;box-shadow:var(--sombra)}
-  .ing img,.ing .ing-svg{height:72px;width:auto;margin:0 auto 10px;display:block}
+  .ing img{height:72px;width:auto;margin:0 auto 10px;display:block}
   .ing b{font-family:var(--f-titulo);font-size:1.1rem;display:block}
   .ing span{font-size:.85rem;opacity:.75}
 
@@ -310,7 +311,8 @@
         <div class="ing"><img src="img/ing-pollo.webp" alt="" loading="lazy"><b>Pollo</b><span>Sabor que enamora</span></div>
         <div class="ing"><img src="img/ing-calabaza.webp" alt="" loading="lazy"><b>Calabaza de Castilla</b><span>Fibra para su pancita</span></div>
         <div class="ing"><img src="img/ing-corazon.webp" alt="" loading="lazy"><b>Corazón de res</b><span>Proteína natural</span></div>
-        <div class="ing"><svg class="ing-svg" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#5a382b" stroke-width="5" stroke-linejoin="round" fill="#e2b06a"><path d="M38 12c14-6 28 6 22 22-3 8 2 12 6 20 8 16-4 34-22 32S20 70 28 52c4-8 2-12-2-20-5-10 0-17 12-20z"/></g><g stroke="#b3833f" stroke-width="3" stroke-linecap="round" fill="none"><path d="M36 26l6 3M48 22l2 5M34 64l6 2M48 72l2-5M56 58l-5 2"/></g></svg><b>Cacahuate</b><span>Grasas buenas</span></div>
+        <div class="ing"><img src="img/ing-manzana.webp" alt="" loading="lazy"><b>Manzana</b><span>Dulzura natural y fibra</span></div>
+        <div class="ing"><img src="img/ing-cacahuate.webp" alt="" loading="lazy"><b>Cacahuate</b><span>Grasas buenas</span></div>
         <div class="ing"><img src="img/ing-avena.webp" alt="" loading="lazy"><b>Avena</b><span>Energía de la buena</span></div>
       </div>
     </div>
@@ -369,16 +371,20 @@
   const PRODUCTOS = [
     { nombre:"Galletas de hígado de res", tag:"Favoritas", fondo:"bg-manzana", icono:"galleta",
       desc:"Crujientes y con todo el sabor del hígado de res. El premio clásico de la Abuela.",
-      tamanos:[{g:"100 g",p:45},{g:"50 g",p:25}] },
+      tamanos:[{g:"100 g",p:45}] },
     { nombre:"Galletas de hígado de pollo", tag:"Suavecitas", fondo:"bg-mani", icono:"hueso",
       desc:"Un sabor suave que conquista hasta a los más quisquillosos, perros y gatos.",
-      tamanos:[{g:"100 g",p:45},{g:"50 g",p:25}] },
-    { nombre:"Galletas de calabaza de Castilla", tag:"Ligeras", fondo:"bg-max", icono:"calabaza",
+      tamanos:[{g:"100 g",p:45}] },
+    { nombre:"Galletas de calabaza de Castilla", tag:"Solo en temporada", fondo:"bg-max", icono:"calabaza",
       desc:"Con calabaza de Castilla, rica en fibra. Ideales para premiar seguido.",
-      tamanos:[{g:"100 g",p:40},{g:"50 g",p:20}] },
+      temporada:"Otoño · de octubre a diciembre",
+      tamanos:[{g:"100 g",p:40}] },
+    { nombre:"Galletas de manzana", tag:"Frutales", fondo:"bg-oliva", icono:"manzana",
+      desc:"Con manzana natural, dulces sin azúcar añadida. Un premio fresquito y crujiente.",
+      tamanos:[{g:"100 g",p:45}] },
     { nombre:"Sticks de corazón de res", tag:"Deshidratados", fondo:"bg-oliva", icono:"stick",
       desc:"Tiras de corazón de res deshidratado, 100% proteína y nada más.",
-      tamanos:[{g:"100 g",p:150},{g:"50 g",p:75}] },
+      tamanos:[{g:"100 g",p:150}] },
     { nombre:"Crema de cacahuate", tag:"Sin azúcares", fondo:"bg-mani", icono:"frasco",
       desc:"Solo cacahuate, sin xilitol ni conservadores. Perfecta para juguetes rellenables.",
       tamanos:[{g:"220 g",p:100}] }
@@ -389,6 +395,7 @@
     galleta:'<img src="img/galleta-corazon.webp" alt="" loading="lazy">',
     hueso:'<img src="img/hueso.webp" alt="" loading="lazy">',
     calabaza:'<img src="img/ing-calabaza.webp" alt="" loading="lazy">',
+    manzana:'<img src="img/ing-manzana.webp" alt="" loading="lazy">',
     stick:'<img src="img/ing-corazon.webp" alt="" loading="lazy">',
     frasco:'<svg viewBox="0 0 100 100"><g stroke="#5a382b" stroke-width="4" stroke-linejoin="round"><rect x="28" y="14" width="44" height="14" rx="4" fill="#d8a354"/><path d="M26 30h48v50a8 8 0 0 1-8 8H34a8 8 0 0 1-8-8z" fill="#E8CDA9"/><rect x="34" y="46" width="32" height="22" rx="4" fill="#fff8ee"/></g><path d="M50 62s-7-4-7-9a3.5 3.5 0 0 1 7-1 3.5 3.5 0 0 1 7 1c0 5-7 9-7 9z" fill="#C97F6F"/></svg>'
   };
@@ -406,6 +413,7 @@
       <div class="cuerpo">
         <h3>${prod.nombre}</h3>
         <p class="desc">${prod.desc}</p>
+        ${prod.temporada ? `<p class="temporada">🍂 Solo en temporada: ${prod.temporada}</p>` : ""}
         <div class="tamanos" role="group" aria-label="Presentación">
           ${prod.tamanos.map((t,i)=>`<button type="button" aria-pressed="${i===0}" data-i="${i}">${t.g}</button>`).join("")}
         </div>
@@ -430,7 +438,7 @@
 
   // Tabla de precios
   document.getElementById("tabla").innerHTML = PRODUCTOS.flatMap(prod =>
-    prod.tamanos.map((t,i) => `<tr><td>${i===0 ? "<b>"+prod.nombre+"</b>" : ""}</td><td class="num">${t.g}</td><td class="num">${mxn(t.p)}</td></tr>`)
+    prod.tamanos.map((t,i) => `<tr><td>${i===0 ? "<b>"+prod.nombre+"</b>"+(prod.temporada ? `<br><small class="temporada">Solo en temporada · ${prod.temporada}</small>` : "") : ""}</td><td class="num">${t.g}</td><td class="num">${mxn(t.p)}</td></tr>`)
   ).join("");
 
   // Enlaces generales de WhatsApp
