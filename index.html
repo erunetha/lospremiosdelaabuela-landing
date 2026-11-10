@@ -88,7 +88,7 @@
     .hero-grid{grid-template-columns:1fr}
     .hero-arte{max-width:480px;margin-inline:auto;width:100%}
     .sello{width:104px;height:104px;font-size:1.5rem}
-    .sello span{font-size:2.rem}
+    .sello span{font-size:2rem}
   }
 
   /* ---------- Beneficios ---------- */
@@ -120,6 +120,7 @@
   .tamanos button[aria-pressed="true"]{background:var(--cafe);border-color:var(--cafe);color:var(--avena)}
   .precio-fila{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-top:4px}
   .precio{font-family:var(--f-mano);font-size:2.2rem;line-height:1}
+  .precio .tamano-unico{font-family:var(--f-texto);font-size:.85rem;font-weight:700;line-height:1;margin-left:10px;padding:4px 10px;border:1.5px dashed var(--cafe);border-radius:999px;vertical-align:middle;opacity:.85}
   .precio small{font-family:var(--f-texto);font-size:.8rem;opacity:.7;margin-left:2px}
   .card .btn{padding:10px 16px;font-size:.95rem;justify-content:center}
   .bg-mani{background:var(--mani)}
@@ -384,14 +385,14 @@
     { nombre:"Galletas de hígado de pollo", tag:"Suavecitas", fondo:"bg-mani", icono:"hueso",
       desc:"Un sabor suave que conquista hasta a los más quisquillosos, perros y gatos.",
       tamanos:[{g:"100 g",p:45}] },
-    { nombre:"Galletas de calabaza de Castilla", tag:"Solo en temporada", fondo:"bg-max", icono:"calabaza",
+    { nombre:"Galletas de calabaza de Castilla", tag:"Otoño", fondo:"bg-max", icono:"calabaza",
       desc:"Con calabaza de Castilla, rica en fibra. Ideales para premiar seguido.",
       temporada:"Otoño · de octubre a diciembre",
       tamanos:[{g:"100 g",p:40}] },
     { nombre:"Galletas de manzana", tag:"Frutales", fondo:"bg-oliva", icono:"manzana",
       desc:"Con manzana natural, dulces sin azúcar añadida. Un premio fresquito y crujiente.",
       tamanos:[{g:"100 g",p:45}] },
-    { nombre:"Sticks de corazón de res", tag:"Deshidratados", fondo:"bg-oliva", icono:"stick",
+    { nombre:"Sticks de corazón de res", tag:"Deshidratados", fondo:"bg-manzana", icono:"stick",
       desc:"Tiras de corazón de res deshidratado, 100% proteína y nada más.",
       tamanos:[{g:"100 g",p:150}] },
     { nombre:"Crema de cacahuate", tag:"Sin azúcares", fondo:"bg-mani", icono:"frasco",
@@ -423,9 +424,9 @@
         <h3>${prod.nombre}</h3>
         <p class="desc">${prod.desc}</p>
         ${prod.temporada ? `<p class="temporada">🍂 Solo en temporada: ${prod.temporada}</p>` : ""}
-        <div class="tamanos" role="group" aria-label="Presentación">
+        ${prod.tamanos.length > 1 ? `<div class="tamanos" role="group" aria-label="Presentación">
           ${prod.tamanos.map((t,i)=>`<button type="button" aria-pressed="${i===0}" data-i="${i}">${t.g}</button>`).join("")}
-        </div>
+        </div>` : ""}
         <div class="precio-fila">
           <span class="precio"></span>
           <a class="btn btn-max" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir</a>
@@ -436,7 +437,7 @@
     const botones = card.querySelectorAll(".tamanos button");
     const elegir = i => {
       const t = prod.tamanos[i];
-      precio.innerHTML = `${mxn(t.p)}<small>MXN</small>`;
+      precio.innerHTML = `${mxn(t.p)}<small>MXN</small>` + (prod.tamanos.length === 1 ? `<span class="tamano-unico">${t.g}</span>` : "");
       pedir.href = waLink(`¡Hola! Quiero pedir ${prod.nombre} de ${t.g} (${mxn(t.p)}) 🐾`);
       botones.forEach(b => b.setAttribute("aria-pressed", b.dataset.i == i));
     };
