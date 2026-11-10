@@ -51,9 +51,14 @@ Tipografías: *The Seasons* (títulos), *Open Sans* (texto), *Buffalo* (detalles
 
 ## Publicación
 
-Pensado para **Cloudflare Pages** conectado a este repo:
+Publicado en **Cloudflare Workers** (assets estáticos) con Wrangler. La configuración está en `wrangler.jsonc`; `.assetsignore` deja fuera lo que no debe subirse.
 
-1. Cloudflare → Workers & Pages → Create → Pages → *Connect to Git* → elige este repositorio.
-2. Framework preset: **None**. Build command: *(vacío)*. Output directory: `/`.
-3. Cada `git push` a `main` publica automáticamente; otras ramas generan una URL de vista previa.
-4. En *Custom domains* agrega `lospremiosdelaabuela.mx` (y redirige `.com` → `.mx`).
+URL actual: https://lospremiosdelaabuela.oscaradrian-ia.workers.dev
+
+Para publicar una nueva versión (necesita Node y haber hecho `npx wrangler login` una vez):
+
+```bash
+npx wrangler deploy
+```
+
+Para el dominio propio: Cloudflare → Workers & Pages → `lospremiosdelaabuela` → *Settings* → *Domains & Routes* → agrega `lospremiosdelaabuela.mx` (y redirige `.com` → `.mx`).
